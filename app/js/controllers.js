@@ -1,22 +1,19 @@
-'use strict';
+var maxblog = angular.module('maxblog', []);
+ 
+maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
+    $http.get('data/episodes.json').success(function(data) {
+	$scope.episodes = data;
 
-/* Controllers */
+	var range = [];
+	for (var i = 0; i < data.length; i++){
+	    range.push(i);
+	}
 
-var phonecatControllers = angular.module('phonecatControllers', []);
-
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
-    $scope.phones = Phone.query();
-    $scope.orderProp = 'age';
-  }]);
-
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
+	$scope.range = range;
     });
 
-    $scope.setImage = function(imageUrl) {
-      $scope.mainImageUrl = imageUrl;
-    }
-  }]);
+   $http.get('data/chars.json').success(function(data) {
+	$scope.chars = data;
+    });
+
+});

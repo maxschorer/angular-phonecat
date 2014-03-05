@@ -1,0 +1,242 @@
+[
+  {
+    "episode_id": 1,
+    "season_num": 1,
+    "episode_num": 1,
+    "title": "Winter Is Coming",
+    "air_date": "2011-04-17T00:00:00.000Z",
+    "us_viewers": "2.22"
+  },
+  {
+    "episode_id": 2,
+    "season_num": 1,
+    "episode_num": 2,
+    "title": "The Kingsroad",
+    "air_date": "2011-04-24T00:00:00.000Z",
+    "us_viewers": "2.2"
+  },
+  {
+    "episode_id": 3,
+    "season_num": 1,
+    "episode_num": 3,
+    "title": "Lord Snow",
+    "air_date": "2011-05-01T00:00:00.000Z",
+    "us_viewers": "2.44"
+  },
+  {
+    "episode_id": 4,
+    "season_num": 1,
+    "episode_num": 4,
+    "title": "Cripples, Bastards, and Broken Things",
+    "air_date": "2011-05-08T00:00:00.000Z",
+    "us_viewers": "2.45"
+  },
+  {
+    "episode_id": 5,
+    "season_num": 1,
+    "episode_num": 5,
+    "title": "The Wolf and the Lion",
+    "air_date": "2011-05-15T00:00:00.000Z",
+    "us_viewers": "2.58"
+  },
+  {
+    "episode_id": 6,
+    "season_num": 1,
+    "episode_num": 6,
+    "title": "A Golden Crown",
+    "air_date": "2011-05-22T00:00:00.000Z",
+    "us_viewers": "2.44"
+  },
+  {
+    "episode_id": 7,
+    "season_num": 1,
+    "episode_num": 7,
+    "title": "You Win or You Die",
+    "air_date": "2011-05-29T00:00:00.000Z",
+    "us_viewers": "2.4"
+  },
+  {
+    "episode_id": 8,
+    "season_num": 1,
+    "episode_num": 8,
+    "title": "The Pointy End",
+    "air_date": "2011-06-05T00:00:00.000Z",
+    "us_viewers": "2.72"
+  },
+  {
+    "episode_id": 9,
+    "season_num": 1,
+    "episode_num": 9,
+    "title": "Baelor",
+    "air_date": "2011-06-12T00:00:00.000Z",
+    "us_viewers": "2.66"
+  },
+  {
+    "episode_id": 10,
+    "season_num": 1,
+    "episode_num": 10,
+    "title": "Fire and Blood",
+    "air_date": "2011-06-19T00:00:00.000Z",
+    "us_viewers": "3.04"
+  },
+  {
+    "episode_id": 11,
+    "season_num": 2,
+    "episode_num": 1,
+    "title": "The North Remembers",
+    "air_date": "2012-04-01T00:00:00.000Z",
+    "us_viewers": "3.86"
+  },
+  {
+    "episode_id": 12,
+    "season_num": 2,
+    "episode_num": 2,
+    "title": "The Night Lands",
+    "air_date": "2012-04-08T00:00:00.000Z",
+    "us_viewers": "3.76"
+  },
+  {
+    "episode_id": 13,
+    "season_num": 2,
+    "episode_num": 3,
+    "title": "What Is Dead May Never Die",
+    "air_date": "2012-04-15T00:00:00.000Z",
+    "us_viewers": "3.77"
+  },
+  {
+    "episode_id": 14,
+    "season_num": 2,
+    "episode_num": 4,
+    "title": "Garden of Bones",
+    "air_date": "2012-04-22T00:00:00.000Z",
+    "us_viewers": "3.65"
+  },
+  {
+    "episode_id": 15,
+    "season_num": 2,
+    "episode_num": 5,
+    "title": "The Ghost of Harrenhal",
+    "air_date": "2012-04-29T00:00:00.000Z",
+    "us_viewers": "3.9"
+  },
+  {
+    "episode_id": 16,
+    "season_num": 2,
+    "episode_num": 6,
+    "title": "The Old Gods and the New",
+    "air_date": "2012-05-06T00:00:00.000Z",
+    "us_viewers": "3.88"
+  },
+  {
+    "episode_id": 17,
+    "season_num": 2,
+    "episode_num": 7,
+    "title": "A Man Without Honor",
+    "air_date": "2012-05-13T00:00:00.000Z",
+    "us_viewers": "3.69"
+  },
+  {
+    "episode_id": 18,
+    "season_num": 2,
+    "episode_num": 8,
+    "title": "The Prince of Winterfell",
+    "air_date": "2012-05-20T00:00:00.000Z",
+    "us_viewers": "3.86"
+  },
+  {
+    "episode_id": 19,
+    "season_num": 2,
+    "episode_num": 9,
+    "title": "Blackwater",
+    "air_date": "2012-05-27T00:00:00.000Z",
+    "us_viewers": "3.38"
+  },
+  {
+    "episode_id": 20,
+    "season_num": 2,
+    "episode_num": 10,
+    "title": "Valar Morghulis",
+    "air_date": "2012-06-03T00:00:00.000Z",
+    "us_viewers": "4.2"
+  },
+  {
+    "episode_id": 21,
+    "season_num": 3,
+    "episode_num": 1,
+    "title": "Valar Doeharis",
+    "air_date": "2013-03-31T00:00:00.000Z",
+    "us_viewers": "4.37"
+  },
+  {
+    "episode_id": 22,
+    "season_num": 3,
+    "episode_num": 2,
+    "title": "Dark Wings, Dark Words",
+    "air_date": "2013-04-07T00:00:00.000Z",
+    "us_viewers": "4.27"
+  },
+  {
+    "episode_id": 23,
+    "season_num": 3,
+    "episode_num": 3,
+    "title": "Walk of Punishment",
+    "air_date": "2013-04-14T00:00:00.000Z",
+    "us_viewers": "4.72"
+  },
+  {
+    "episode_id": 24,
+    "season_num": 3,
+    "episode_num": 4,
+    "title": "And Now His Watch Is Ended",
+    "air_date": "2013-04-21T00:00:00.000Z",
+    "us_viewers": "4.87"
+  },
+  {
+    "episode_id": 25,
+    "season_num": 3,
+    "episode_num": 5,
+    "title": "Kissed by Fire",
+    "air_date": "2013-04-28T00:00:00.000Z",
+    "us_viewers": "5.35"
+  },
+  {
+    "episode_id": 26,
+    "season_num": 3,
+    "episode_num": 6,
+    "title": "The Climb",
+    "air_date": "2013-05-05T00:00:00.000Z",
+    "us_viewers": "5.5"
+  },
+  {
+    "episode_id": 27,
+    "season_num": 3,
+    "episode_num": 7,
+    "title": "The Bear and the Maiden Fair",
+    "air_date": "2013-05-12T00:00:00.000Z",
+    "us_viewers": "4.84"
+  },
+  {
+    "episode_id": 28,
+    "season_num": 3,
+    "episode_num": 8,
+    "title": "Season Sons",
+    "air_date": "2013-05-19T00:00:00.000Z",
+    "us_viewers": "5.13"
+  },
+  {
+    "episode_id": 29,
+    "season_num": 3,
+    "episode_num": 9,
+    "title": "The Rains of Castamere",
+    "air_date": "2013-05-26T00:00:00.000Z",
+    "us_viewers": "5.22"
+  },
+  {
+    "episode_id": 30,
+    "season_num": 3,
+    "episode_num": 10,
+    "title": "Mhysa",
+    "air_date": "2013-06-02T00:00:00.000Z",
+    "us_viewers": "5.39"
+  }
+]
