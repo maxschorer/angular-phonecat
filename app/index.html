@@ -1,14 +1,58 @@
-
+<!DOCTYPE html>
 <html lang="en" ng-app="maxblog">
   <head>
     <meta charset="utf-8">
     <title>maxschorer.com</title>
-    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="lib/angular/angular.js"></script>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/angular-highcharts-directive.js"></script>
   </head>
   <body ng-controller="MaxBlogCtrl">
+    <div class="container">
+      <h1><a href="#">MaxSchorer.com</a></h1>
+      <!-- Header -->
+      <div class="navbar">
+	<div class="navbar-inner">
+	  <div class="container">
+	    <ul class="nav">
+	      <li class="active"><a href="#">Home</a></li>
+	      <li><a href="#">Projects</a></li>
+	      <li><a href="#">About</a></li>
+	      <li><a href="#">Contact</a></li>
+	    </ul>
+	  </div>
+	</div>
+      </div>
+
+      <!-- Chart -->
+      <div class="hero-unit"><chart value='chart'></chart></div>
+
+    <!-- Data displayed in chart -->
+      <div class="row">
+	<div class="span12">
+	  <p> Dummy test for where character specific data will go</p>
+	</div>
+      </div>
+
+   <!-- Search box and blog post -->
+
+   <div class="row">
+   <!-- Search box -->
+     <div class="span3">
+       <p> Dummy text: search box will go here </p>
+     </div>
+
+     <!-- Blog post -->
+     <div class="span9">
+       <p> I will post my blog stuff here </p>
+     </div>
+     
+   </div>
+
     <table>
       <tr>
 	<th>Character</th>
@@ -19,5 +63,6 @@
       <td ng-repeat="i in range">{{char.words_by_ep[i]}}</td>
       </tr>
     </table>
+    </div>
   </body>
 </html>

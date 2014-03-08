@@ -1,28 +1,12 @@
 'use strict';
 
-/* App Module */
-
-var phonecatApp = angular.module('phonecatApp', [
-  'ngRoute',
-  'phonecatAnimations',
-
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices'
-]);
-
-phonecatApp.config(['$routeProvider',
-  function($routeProvider) {
-    $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
-      }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
-      }).
-      otherwise({
-        redirectTo: '/phones'
-      });
-  }]);
+angular.module('chartsExample', ['chartsExample.directives','chartsExample.controllers'],
+	       function($routeProvider, $locationProvider) {
+		   $routeProvider.when('/', { 
+		       templateUrl: 'views/main.html',
+		       controller: 'MainCtrl',
+		   }).otherwise({ //for example when running locally (No '/' at the url), this will be loaded
+		       templateUrl: 'views/main.htm',
+		       controller: 'MainCtrl',
+		   });
+	       });
