@@ -36,7 +36,7 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
 	    range.push(i);
 	}
 
-	$scope.range = range;
+	$scope.ep_range = range;
 
 
 	chart['xAxis'] = {
@@ -51,14 +51,38 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
     $http.get('data/chars.json').success(function(jsonData) {
 	$scope.chars = jsonData;
 
+	var range = [];
+
+	for (var i = 0; i < jsonData.length; i++){
+	    range.push(i);
+	}
+
 	chart['series']  = [{
-	    name: 'TYRION',
+	    name: jsonData[0]['name'],
 	    data: jsonData[0]['words_by_ep']
 	}];
 
 	$scope.chart = chart;
+	$scope.char_range = range;
+
+	$scope.display = jsonData[0];
 
     });
+
+    $scope.changeDisplay = function(charName){
+	var ind;
+	for (var i=0; i < $scope.chars.length; i++){
+	    if($scope.chars[i]['name'] == charName){
+		ind = i;
+		break;
+	    }
+	}
+	$scope.display = $scope.chars[ind];
+	$scope.chart.series = [{
+	    name: $scope.chars[ind]['name'],
+	    data: $scope.chars[ind]['words_by_ep']
+	}]	    
+    }
 
     
 });

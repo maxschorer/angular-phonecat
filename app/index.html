@@ -28,13 +28,35 @@
 	</div>
       </div>
 
+      <h2>Some Stats of Ice and Fire</h2>
+
       <!-- Chart -->
-      <div class="hero-unit"><chart value='chart'></chart></div>
+      <div class="row">
+	<div class="span2">
+	  Choose Character: <input ng-model="query">
+	  <table>
+	    <tr ng-repeat="char in chars | filter:query">
+	      <td><input type="radio" ng-model="Display" name="character" ng-click="changeDisplay(char.name)"> {{char.name}}</td>
+	    </tr>
+	  </table>
+	</div>
+	<div class="span10" height="100px"><chart value='chart'></chart></div>
+      </div>
 
     <!-- Data displayed in chart -->
       <div class="row">
-	<div class="span12">
-	  <p> Dummy test for where character specific data will go</p>
+	<div class="span2"> </div>
+	<div class="span9">
+	  <table width="100%">
+	    <tr>
+	      <th align="center">Character</th>
+	      <th ng-repeat="ep in episodes" align="center">{{ep.episode_id}}</th>
+	    </tr>
+	    <tr>
+	      <td>{{display.name}}</td>
+	      <td ng-repeat="i in ep_range" align="center">{{display['words_by_ep'][i-1]}}</td>
+	    </tr>
+	  </table>
 	</div>
       </div>
 
@@ -43,7 +65,6 @@
    <div class="row">
    <!-- Search box -->
      <div class="span3">
-       <p> Dummy text: search box will go here </p>
      </div>
 
      <!-- Blog post -->
@@ -53,16 +74,8 @@
      
    </div>
 
-    <table>
-      <tr>
-	<th>Character</th>
-	<th ng-repeat="ep in episodes">{{ep.episode_id}}</th>
-      </tr>
-      <tr ng-repeat="char in chars">
-      <td>{{char.name}}</td>
-      <td ng-repeat="i in range">{{char.words_by_ep[i]}}</td>
-      </tr>
-    </table>
-    </div>
+   <p>Display name {{display.name}}</p>
+   <p> Chart data {{chart.series}} </p>
+   <p> Chart Object {{chartData}} </p>
   </body>
 </html>
