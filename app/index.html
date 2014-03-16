@@ -3,13 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>maxschorer.com</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="lib/angular/angular.js"></script>
-    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <!-- <script src="lib/angular/angular.js"></script> -->
+    <!-- <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> -->
+    <!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
+    <!-- <script src="http://code.highcharts.com/modules/exporting.js"></script> -->
+    <!-- <script src="js/angular-highcharts-directive.js"></script> -->
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.src.js"></script>
+    <script src="js/highcharts-ng.js"></script>
     <script src="js/controllers.js"></script>
-    <script src="js/angular-highcharts-directive.js"></script>
   </head>
   <body ng-controller="MaxBlogCtrl">
     <div class="container">
@@ -28,54 +33,38 @@
 	</div>
       </div>
 
-      <h2>Some Stats of Ice and Fire</h2>
+      <h2 align="center">Game of Thrones Dashboard</h2>
 
       <!-- Chart -->
       <div class="row">
-	<div class="span2">
-	  Choose Character: <input ng-model="query">
-	  <table>
-	    <tr ng-repeat="char in chars | filter:query">
-	      <td><input type="radio" ng-model="Display" name="character" ng-click="changeDisplay(char.name)"> {{char.name}}</td>
-	    </tr>
-	  </table>
-	</div>
-	<div class="span10" height="100px"><chart value='chart'></chart></div>
+	  <highchart id="chart1" config="chartConfig" class="span12"></highchart>
       </div>
 
     <!-- Data displayed in chart -->
       <div class="row">
-	<div class="span2"> </div>
+	<div class="span2">
+	  Choose Character: <input ng-model="query" style="width:100%">
+	  <table>
+	    <tr ng-repeat="char in chars | filter:query">
+	     <td><input type="checkbox" ng-model="Display" name="character" ng-click="addChar(char.name)"> {{char.name}}</td>
+	    </tr>
+	  </table>
+	</div>
 	<div class="span9">
 	  <table width="100%">
 	    <tr>
 	      <th align="center">Character</th>
 	      <th ng-repeat="ep in episodes" align="center">{{ep.episode_id}}</th>
 	    </tr>
-	    <tr>
-	      <td>{{display.name}}</td>
-	      <td ng-repeat="i in ep_range" align="center">{{display['words_by_ep'][i-1]}}</td>
+	    <tr ng-repeat="d in display">
+	      <td>{{d.name}}</td>
+	      <td ng-repeat="i in ep_range" align="center">{{d.raw_cnt_by_ep[i-1]}}</td>
 	    </tr>
 	  </table>
 	</div>
       </div>
 
-   <!-- Search box and blog post -->
+    </div>
 
-   <div class="row">
-   <!-- Search box -->
-     <div class="span3">
-     </div>
-
-     <!-- Blog post -->
-     <div class="span9">
-       <p> I will post my blog stuff here </p>
-     </div>
-     
-   </div>
-
-   <p>Display name {{display.name}}</p>
-   <p> Chart data {{chart.series}} </p>
-   <p> Chart Object {{chartData}} </p>
   </body>
 </html>
