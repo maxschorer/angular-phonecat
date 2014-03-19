@@ -36,7 +36,31 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
 	    align: 'center',
 	    verticalAlign: 'bottom',
 	    borderWidth: 0
+	},
+	series: []
+    };
+
+    $scope.updateChart = function(character){
+	if (!character.checked){
+	    //remove character from chart
+	    for (var i=0; i < $scope.chartConfig.series.length; i++){
+		if($scope.chartConfig.series[i].name == character.name){
+		    $scope.chartConfig.series.splice(i,1);
+		    break;
+		}
+	    }
+
+	} else {
+	    // add character to chart
+	    $scope.chartConfig.series.push(
+		{
+		    name: character.name,
+		    data: character.raw_cnt_by_ep
+		}
+	    );
+
 	}
+
     };
 
 
@@ -44,73 +68,39 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
 	$scope.episodes = jsonData;
 
 	var range = [];
-	for (var i = 1; i <= jsonData.length; i++){
+	var episode_codes = [];
+	for (var i = 0; i < $scope.episodes.length; i++){
 	    range.push(i);
+	    var episode = $scope.episodes[i];
+	    var code = episode.season_num + "." + episode.episode_num;
+	    episode_codes.push(code);
 	}
 
-	$scope.ep_range = range;
+	$scope.episode_range = range;
 
 	$scope.chartConfig.xAxis = {
 	    title: {
 		text: 'Episodes'
 	    },
-	    categories: range
+	    x: -20,
+	    categories: episode_codes
 	};
 
     });
 
 
     $http.get('data/test10.json').success(function(jsonData) {
-	$scope.chars = jsonData;
+	$scope.characters = jsonData;
 
-	var range = [];
-
-	for (var i = 0; i < jsonData.length; i++){
-	    range.push(i);
+	$scope.characters[0].checked = true;
+	for (var i=1; i < $scope.characters.length; i++){
+	    $scope.characters[i].checked = false;
 	}
 
-	$scope.chartConfig.series = [
-	    {
-		name: jsonData[0].name,
-		data: jsonData[0].raw_cnt_by_ep
-	    }
-	];
-
-	$scope.chartConfig.subtitle = {
-	    text: jsonData[0].name,
-	    x: -20
-	};
-
-	$scope.char_range = range;
-	$scope.display = [jsonData[0]];
+	$scope.updateChart($scope.characters[0]);
 
     });
 
-
-    $scope.addChar = function(charName){
-	// See if person already in chart
-	for (var d=0; d < $scope.display.length; d++){
-	    if (charName == $scope.display[d].name) return;
-	}
-
-	var ind;
-	for (var i=0; i < $scope.chars.length; i++){
-	    if($scope.chars[i].name == charName){
-		ind = i;
-		break;
-	    }
-	}
-
-	$scope.display.push($scope.chars[ind]);
-
-	$scope.chartConfig.series.push(
-	    {
-		name: $scope.chars[i].name,
-		data: $scope.chars[i].raw_cnt_by_ep
-	    }
-	);
-
-    };
 
 
 });

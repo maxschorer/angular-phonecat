@@ -45,22 +45,23 @@
 	<div class="span2">
 	  Choose Character: <input ng-model="query" style="width:100%">
 	  <table>
-	    <tr ng-repeat="char in chars | filter:query">
-	     <td><input type="checkbox" ng-model="Display" name="character" ng-click="addChar(char.name)"> {{char.name}}</td>
+	    <tr ng-repeat="character in characters | filter:query">
+	     <td><input type="checkbox" ng-model="character.checked"  ng-click="updateChart(character)"> {{character.name}} </td>
 	    </tr>
 	  </table>
 	</div>
 	<div class="span9">
-	  <table width="100%">
+	  <table width="100%" class="table">
 	    <tr>
 	      <th align="center">Character</th>
-	      <th ng-repeat="ep in episodes" align="center">{{ep.episode_id}}</th>
+	      <th ng-repeat="episode in episodes" align="center">{{episode.episode_id}}</th>
 	    </tr>
-	    <tr ng-repeat="d in display">
-	      <td>{{d.name}}</td>
-	      <td ng-repeat="i in ep_range" align="center">{{d.raw_cnt_by_ep[i-1]}}</td>
+	    <tr ng-repeat="character in characters" ng-show="character.checked">
+	      <td>{{character.name}}</td>
+	      <td ng-repeat="i in episode_range" align="center">{{character.raw_cnt_by_ep[i]}}</td>
 	    </tr>
 	  </table>
+
 	</div>
       </div>
 
