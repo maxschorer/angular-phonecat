@@ -42,7 +42,7 @@
 
     <!-- Data displayed in chart -->
       <div class="row">
-	<div class="span2">
+	<div class="span2" style="overflow: scroll; height:200px">
 	  Choose Character: <input ng-model="query" style="width:100%">
 	  <table>
 	    <tr ng-repeat="character in characters | filter:query">
@@ -54,11 +54,11 @@
 	  <table width="100%" class="table">
 	    <tr>
 	      <th align="center">Character</th>
-	      <th ng-repeat="episode in episodes" align="center">{{episode.episode_id}}</th>
+	      <th ng-repeat="episode in episode_codes" align="center">{{episode}}</th>
 	    </tr>
 	    <tr ng-repeat="character in characters" ng-show="character.checked">
-	      <td>{{character.name}}</td>
-	      <td ng-repeat="i in episode_range" align="center">{{character.raw_cnt_by_ep[i]}}</td>
+	      <td>{{character.code}}</td>
+	      <td ng-repeat="i in episode_range" align="center">{{character.rawCntByEp[i]}}</td>
 	    </tr>
 	  </table>
 

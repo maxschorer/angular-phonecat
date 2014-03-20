@@ -44,7 +44,7 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
 	if (!character.checked){
 	    //remove character from chart
 	    for (var i=0; i < $scope.chartConfig.series.length; i++){
-		if($scope.chartConfig.series[i].name == character.name){
+		if($scope.chartConfig.series[i].name == character.code){
 		    $scope.chartConfig.series.splice(i,1);
 		    break;
 		}
@@ -54,8 +54,8 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
 	    // add character to chart
 	    $scope.chartConfig.series.push(
 		{
-		    name: character.name,
-		    data: character.raw_cnt_by_ep
+		    name: character.code,
+		    data: character.rawCntByEp
 		}
 	    );
 
@@ -77,19 +77,20 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
 	}
 
 	$scope.episode_range = range;
+	$scope.episode_codes = episode_codes;
 
 	$scope.chartConfig.xAxis = {
 	    title: {
 		text: 'Episodes'
 	    },
 	    x: -20,
-	    categories: episode_codes
+	    categories: $scope.episode_codes
 	};
 
     });
 
 
-    $http.get('data/test10.json').success(function(jsonData) {
+    $http.get('data/full.json').success(function(jsonData) {
 	$scope.characters = jsonData;
 
 	$scope.characters[0].checked = true;
