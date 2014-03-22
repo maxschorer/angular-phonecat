@@ -1,11 +1,11 @@
-{
+1;2c{
   "name": "maxschorer.com",
   "description": "A Blog of Ice and Fire",
   "repository": "https://github.com/maxschorer/maxblog-frontend",
   "version": "0.0.0",
   "dependencies": {
       "express": "3.x"
-  }
+  },
   "engines": {
       "node": "0.10.x"
   } 
