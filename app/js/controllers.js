@@ -3,6 +3,7 @@
 var maxblog = angular.module('maxblog', ['highcharts-ng']);
 
 maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
+    delete $http.defauls.hedaers.common['X-Requested-With'];
     console.log($http.defaults.headers.common);
     'use strict'; // what's the purpose of this?
 
