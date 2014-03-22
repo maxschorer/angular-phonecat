@@ -63,8 +63,8 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
 
     };
 
-
-    $http.get('data/episodes.json').success(function(jsonData) {
+    $http.get('https://rawgithub.com/maxschorer/maxblog-frontend/master/app/data/episodes.json').success(function(jsonData) {
+    //$http.get('data/episodes.json').success(function(jsonData) {
 	$scope.episodes = jsonData;
 
 	var range = [];
@@ -89,8 +89,8 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
 
     });
 
-
-    $http.get('data/full.json').success(function(jsonData) {
+    $http.get('https://rawgithub.com/maxschorer/maxblog-frontend/master/app/data/full.json').success(function(jsonData) {
+//    $http.get('data/full.json').success(function(jsonData) {
 	$scope.characters = jsonData;
 
 	$scope.characters[0].checked = true;
