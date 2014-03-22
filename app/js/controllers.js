@@ -1,3 +1,4 @@
+
 /*jslint smarttabs:true */
 
 var maxblog = angular.module('maxblog', ['highcharts-ng']);
