@@ -28,37 +28,8 @@
 	</div>
       </div>
 
-      <h2 align="center">Game of Thrones Dashboard</h2>
-
-      <!-- Chart -->
-      <div class="row">
-	  <highchart id="chart1" config="chartConfig" class="span12"></highchart>
-      </div>
-
-    <!-- Data displayed in chart -->
-      <div class="row">
-	<div class="span2" style="overflow: scroll; height:200px">
-	  Choose Character: <input ng-model="query" style="width:100%">
-	  <table>
-	    <tr ng-repeat="character in characters | filter:query">
-	     <td><input type="checkbox" ng-model="character.checked"  ng-click="updateChart(character)"> {{character.name}} </td>
-	    </tr>
-	  </table>
-	</div>
-	<div class="span9">
-	  <table width="100%" class="table">
-	    <tr>
-	      <th align="center">Character</th>
-	      <th ng-repeat="episode in episode_codes" align="center">{{episode}}</th>
-	    </tr>
-	    <tr ng-repeat="character in characters" ng-show="character.checked">
-	      <td>{{character.code}}</td>
-	      <td ng-repeat="i in episode_range" align="center">{{character.rawCntByEp[i]}}</td>
-	    </tr>
-	  </table>
-
-	</div>
-      </div>
+      <h2 align="center">Some Stats of Ice and Fire</h2>
+      <p>2014-03-25</p>
 
     </div>
 
