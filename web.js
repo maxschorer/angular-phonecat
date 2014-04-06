@@ -5,7 +5,7 @@ var fs = require("fs");
 
 var app = express();
 app.use(logfmt.requestLogger());
-//app.use('/',express.static(process.env.PWD+'/app/js/'));
+app.use('/',express.static(__dirname));
 
 app.get('/projects', function(req, res) {
   var htmlFile = fs.readFileSync("app/projects/got.html").toString();

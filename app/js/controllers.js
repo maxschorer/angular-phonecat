@@ -83,7 +83,7 @@ maxblog.controller('MaxBlogCtrl', function ($scope, $http) {
 
 	$scope.chartConfig.xAxis = {
 	    title: {
-		text: 'Episodes'
+		text: 'Episode'
 	    },
 	    x: -20,
 	    categories: $scope.episode_codes

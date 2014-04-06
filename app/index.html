@@ -4,17 +4,10 @@
     <meta charset="utf-8">
     <title>maxschorer.com</title>
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    <script src="http://code.highcharts.com/highcharts.src.js"></script>
-    <!-- <script src="js/highcharts-ng.js" type="text/javascript"></script> -->
-    <!-- <script src="js/controllers.js" type="text/javascript"></script> -->
-    <script src="https://rawgithub.com/pablojim/highcharts-ng/master/src/highcharts-ng.js"></script>
-    <script src="https://rawgithub.com/maxschorer/maxblog-frontend/master/app/js/controllers.js"></script>
   </head>
-  <body ng-controller="MaxBlogCtrl">
-    <div class="container">
-      <h1><a href="#">MaxSchorer.com</a></h1>
+  <body>
+    <div class="container" style="width: 60%;">
+      <h1><a href="/">MaxSchorer.com</a></h1>
       <!-- Header -->
       <div class="navbar">
 	<div class="navbar-inner">
@@ -22,15 +15,81 @@
 	    <ul class="nav">
 	      <li class="active"><a href="#">Home</a></li>
 	      <li><a href="/projects">Projects</a></li>
-	      <li><a href="#">Contact</a></li>
 	    </ul>
 	  </div>
 	</div>
       </div>
 
-      <h2 align="center">Some Stats of Ice and Fire</h2>
-      <p>2014-03-25</p>
+      <h2>Some Stats of Ice and Fire</h2>
+      <p>2014-04-06</p>
+       <div style="height:300px;text-align:center;margin-left:auto;margin-right:auto;">
+	<a href="/projects"><img src="app/img/tyrionChart.jpeg" class="img-responsive" style="height:100%;"></a>
+      </div>
+      <p>Have you ever been watching Game of Thrones and then wondered to yourself, <em>"What if I watched every episode, wrote down all the dialogue in some scripts, generated some statistics on how much each character spoke for each episode, and then turned that information into an online dashboard?"</em>  If you're most people, the answer is probably no, but as I was re-watching the episodes in anticipation of the upcoming season, this very idea struck me.  Anyway, I found some interesting patterns in the data on my own, which I've written about below, but I encourage you to <a href="/projects">check out the dashboard here</a> so you can compare character dialogue yourself.  Both the below post and the dashboard contain <b>MASSIVE SPOILERS</b>, so if you're not caught up, I'd recommend not reading any further.  In addition, if you have any further feedback or more analyses you'd like to see, feel free to email me at mcschorer@gmail.com.</p>
+      <br>
+      
+      <h4>Robb Had More Dialogue Than Either Ned or Catelyn Before Their Deaths</h4>
+      <table class="table">
+	<tr><th>Character</th><th>Season 1</th><th>Season 2</th><th>Season 3</th><th>Total</th></tr>
+	<tr><td>Robb Stark</td><td>1071</td><td>1631</td><td>1288</td><td>3990</td></tr>
+	<tr><td>Ned Stark</td><td>3497</td><td>0</td><td>10</td><td>3507</td></tr>
+	<tr><td>Catelyn Stark</td><td>1714</td><td>1068</td><td>724</td><td>3506</td></tr>
+      </table>
+      <p>
+	Amongst the three Starks that died (i.e. The Trinity of Sadness), Robb ended up having the most dialogue in the show, which differs from the book, since s whole story is told from s perspective. Another small point is that Ned and s dialogue counts were off by one. This analysis was a little rough, so with some data cleaning, this difference may be larger, but it's still pretty interesting that their total dialogue was nearly identical.</p>
+      <p>Also, if you're wondering how does Ned have dialogue in season 3 when he didn't have a head by that point, the answer is that Bran has a dream in the second episode of the season, and in that dream, he hears Ned's voice.
+      </p>
+      <br>
+      
+      <h4>Tyrion (Like All Lannisters Apparently) Talks A Lot</h4>
+      <p>Below are the top ten characters by dialogue, and there were some surprises on the list.</p>
+      <table class="table">
+	<tr><th>Rank</th><th>Character</th><th>Season 1</th><th>Season 2</th><th>Season 3</th><th>Total</th></tr>
+	<tr><td>1</td><td>Tyrion Lannister</td><td>3877</td><td>4570</td><td>3033</td><td>11480</td></tr>
+	<tr><td>2</td><td>Cersei Lannister</td><td>1783</td><td>2761</td><td>1450</td><td>5994</td></tr>
+	<tr><td>3</td><td>Jaime Lannister</td><td>1321</td><td>1202</td><td>2053</td><td>4576</td></tr>
+	<tr><td>4</td><td>Petry Baelish</td><td>2216</td><td>1301</td><td>645</td><td>4162</td></tr>
+	<tr><td>5</td><td>Daenerys Targaryen</td><td>1316</td><td>1548</td><td>1271</td><td>4135</td></tr>
+	<tr><td>6</td><td>Robb Stark</td><td>1071</td><td>1631</td><td>1288</td><td>3990</td></tr>
+	<tr><td>7</td><td>Varys</td><td>1516</td><td>1184</td><td>1268</td><td>3968</td></tr>
+	<tr><td>8</td><td>Theon Greyjoy</td><td>801</td><td>2472</td><td>556</td><td>3829</td></tr>
+	<tr><td>9</td><td>Tywin Lannister</td><td>752</td><td>1330</td><td>1705</td><td>3787</td></tr>
+	<tr><td>10</td><td>Ned Stark</td><td>3497</td><td>0</td><td>10</td><td>3507</td></tr>
+      </table>
 
+      <p>A couple of things I didn't expect:</p>
+      <ul>
+	<li><b>Tyrion</b>: I expected Tyrion to have the most dialogue, but not by this margin. He has <b>more dialogue than any two other characters combined.</b></li>
+	<li><b>Baelish</b>: Most casual fans probably don't even know who this guy is (hint: he's the dude with the goatee who's always creeping on Sansa), but I always thought he got a little too much screen time.  Wih that said, I didn't realize that all those jokes between him and Varys about prostitutes and castration would lead to the <b>fourth highest word total</b> on the show.</li>
+	<li><b>Top 3</b>: The three characters with the most dialogue are <b>Lannisters</b> (and 4 of the top 9). In case you're wondering where the other Starks come in, I've listed them below:
+	  <table class="table">
+	    <tr><th>Rank</th><th>Character</th><th>Season 1</th><th>Season 2</th><th>Season 3</th><th>Total</th></tr>
+	    <tr><td>11</td><td>Catelyn Stark</td><td>1714</td><td>1068</td><td>724</td><td>3506</td></tr>
+	    <tr><td>15</td><td>Jon Snow</td><td>1248</td><td>640</td><td>762</td><td>2650</td></tr>
+	    <tr><td>16</td><td>Sansa Stark</td><td>844</td><td>745</td><td>976</td><td>2565</td></tr>
+	    <tr><td>17</td><td>Arya Stark</td><td>791</td><td>838</td><td>737</td><td>2366</td></tr>
+	    <tr><td>21</td><td>Bran Stark</td><td>584</td><td>497</td><td>806</td><td>1887</td></tr>
+	    <tr><td>115</td><td>Rickon Stark</td><td>34</td><td>24</td><td>67</td><td>125</td></tr>
+	  </table>
+	</li>
+      </ul>
+      <br>
+
+      <h4>GoT Has Had More Lannister Dialogue Than Stark Dialogue Since the 2nd Season</h4>
+      <p>Considering the top 10 list by character wasn't what I expected, I also looked at the percentage of dialogue by house at the series progressed, which is below (I made a lot of simplifying assumptions, so take these numbers with a grain of salt). This chart looks at the cumulative average of dialogue attributable to the major houses as the show progressed.</p>
+       <div style="height:300px;text-align:center;margin-left:auto;margin-right:auto;">
+	<img src="app/img/fam_plot.png" class="img-responsive" style="height:100%;">
+      </div>
+
+      <p>In my head, I always saw the Starks as the central family in the story, with the Targaryens, Baratheons, and Lannisters playing more supporting roles. If we look at the show based on dialogue, though, I was definitely wrong. In fact, except for the Lannisters, it appears that the proportion of dialogue for each of the major hours is steadily declining. I think this trend is mainly due to the inclusion of multiple other subplots (ex: NW/Wildlings, Tyrells, Greyjoys, Varys/Baelish, etc.), and there's only so much dialogue that can happen in one hour.</p>
+      <br>
+      <h4>Hodor.</h4>
+      <p>I had to count the number of times Hodor says "Hodor". I noticed that he's increased  from 3 times in the first season to 5 times in the second and 18 times in the third. Although it's a small sample size, one could argue this is exponential growth. Assuming Hodor continues to increase his Hodoring at an exponential trend, and Tyrion continue to average the same amount of dialogue in the following seasons, we see that Hodor would hypothetically catch Tyrion around Season 9 (although the show will likely only be 7-8 seasons).</p>
+      <p>With that said, if Hodor's presence increases at this rate, this possibly confirms a common fan theory: Hodor is indeed the Prince That was Promised and the true claimant to the Iron Throne.</p>
+       <div style="height:300px;text-align:center;margin-left:auto;margin-right:auto;">
+	<img src="app/img/hodor.jpeg" class="img-responsive" style="height:100%;">
+      </div>
+      <p style="text-align:center">Inevitable.</p>
     </div>
 
   </body>
